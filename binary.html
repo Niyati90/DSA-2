@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var a=[]
+        var c= -1;
+        
+        function getdata()
+        {
+            c++;
+            a[c]=document.getElementById("text1").value
+            display()
+        }
+
+        function search()
+        {
+            var low=0;
+            var high=(a.length-1)
+            var mid=((low+high)/2)
+
+            var value=document.getElementById("text1").value
+            index=a.indexOf(value)
+
+            if(index>=0)
+            {
+                while(a[low] != value)
+                {
+                    if(a[mid]<value)
+                    {
+                        low=mid+1
+                        mid=((low+high)/2)
+                    }
+                    else{
+                        console.log("Element not Found.");
+                    }
+                }
+            }
+        }
+
+        function display()
+        {
+            for(i=0;i<=c;i++)
+            {
+                console.log(a);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="text1">
+    <input type="button" value="Add" onclick="getdata()">
+    <input type="button" value="Search" onclick="search()">
+    
+</body>
+</html>

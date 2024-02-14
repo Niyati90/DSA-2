@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var array=[22,52,40,-7,-100,100,-1,55]
+        console.log(array);
+        
+        function quicksort(array)
+        {
+            if(array.length < 2)
+            {
+                return array;
+            }
+            else{
+                var mid = array[array.length-1]
+                var leftarray=[]
+                var rightarray=[]
+                for(i=0;i<array.length-1;i++)
+                {
+                    if(mid < array[i])
+                    {
+                        rightarray.push(array[i])
+                    }
+                    else{
+                        leftarray.push(array[i])
+                    }
+                }
+                console.log(rightarray);
+                console.log(leftarray);
+            }
+            var leftans= quicksort(leftarray)
+            var rightans= quicksort(rightarray)
+            console.log(leftans);
+            console.log(rightans);
+            var x = leftans.concat(mid,rightans)
+            console.log(x);
+            return x;
+        }
+
+       
+    </script>
+</head>
+<body>
+    <input type="button" value="sort" onclick="quicksort(array)">
+</body>
+</html>

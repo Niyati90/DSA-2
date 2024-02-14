@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var array=[22,52,40,-7,-100,100,-1,55]
+        console.log(array);
+
+        function add()
+        {
+                var a=document.getElementById("text1").value
+                array.push(a);
+                mergesort(array);
+
+        }
+       
+        function slice1(array)
+        {
+            var mid=Math.floor((array.length)/2)
+            var temp=[]
+            for(let i=0;i<mid;i++)
+            {
+                temp.push(array[i]);
+            }
+            return temp;
+        }
+
+        function slice2(array)
+        {
+            var mid=Math.floor((array.length)/2)
+            var temp=[]
+            for(let i=mid;i<array.length;i++)
+            {
+                temp.push(array[i]);
+            }
+            return temp; 
+        }
+
+        function mergesort(array)
+        {
+            if((array.length) < 2)
+            {
+            return array;
+            }
+            else
+            {                    
+            //  var mid= Math.floor((array.length)/2);
+            //  var leftarray  = array.slice(0,mid);
+            //  var rightarray = array.slice(mid);
+            var leftarray=slice1(array);
+            var rightarray=slice2(array);
+
+             console.log(leftarray);
+             console.log(rightarray);
+            }
+            var x= mergesort(leftarray);
+            var y= mergesort(rightarray);
+            console.log("x=" +x);
+            console.log("y=" +y);
+             var zarray=merge(x,y)
+             console.log(zarray);
+            return zarray;
+        }
+
+        function merge(leftarray,rightarray)
+
+        {
+            var temp=[]
+            while(leftarray.length && rightarray.length)
+            {
+                if(leftarray[0] < rightarray[0])
+                {
+                    temp.push(leftarray.shift())
+                }
+                else
+                {
+                    temp.push(rightarray.shift())
+
+                }
+            }
+        
+        //  var mainarray = temp.concat(leftarray,rightarray)
+         var mainarray = temp.concat(leftarray,rightarray)
+         console.log(mainarray);
+         return mainarray;
+        }
+        // function concat()
+        // function shift()
+        // {
+        //     var newarray=array[0];
+        //     array.splice(0,1);
+        //     return newarray;
+        // }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="text1">
+    <input type="button" value="add" onclick="add()"> 
+    <input type="button" value="sort" onclick="mergesort(array)">
+
+
+    
+</body>
+</html>

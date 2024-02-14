@@ -1,0 +1,76 @@
+<!-- QUEUE -->
+<!DOCTYPE html>   
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var lst =[]
+        var front=rear=-1
+        console.log(front,rear);
+        function push1()
+        {
+            
+            var value1 =document.getElementById("t1").value
+            if(rear ==-1 && front ==-1)
+            {
+                rear++
+                front++
+                lst[rear] = value1
+            }
+            else{
+                rear++
+                lst[rear] = value1
+
+            }
+            // console.log(lst);
+            disp()
+        }
+        
+        function pop1()
+        {
+            if(front==-1)
+            {
+                alert("lst is empty")
+            }
+            else if(front>rear)
+            {
+                alert("lst is empty")
+                front =-1
+            }
+            else{
+                lst[front]= undefined
+                front++
+            }
+            disp()
+            // console.log(lst);
+
+
+        }
+        function disp()
+        {
+            if(front==-1)
+            alert("Empty")
+            else
+            {
+                var tbl="<ul>"
+                for(var i=front;i<=rear;i++)
+                {
+
+                   tbl+="<li>"+ lst[i] +"</li>";
+                }
+                tbl+="</ul>"
+                document.getElementById("ans").innerHTML = tbl
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="t1">
+    <input type="button" id="btn" value="push" onclick="push1()">
+    <input type="button" id="btn" value="pop" onclick="pop1()">
+    <div id="ans"></div>
+</body>
+</html>

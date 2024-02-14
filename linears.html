@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a=[]
+        var c=-1;
+        var flag=0;
+
+        function push()
+        {
+            c++;
+            a[c]=document.getElementById("text1").value
+            display()
+
+        }
+        function search()
+        {
+            var value=document.getElementById("text1").value
+            
+            for(var i=0; i<a.length;i++)
+            {
+                if(value==a[i])
+                {
+                    alert("Your Searched Value Found at" +i);
+                    flag=1;
+                }
+            }
+            if(flag==0)
+            {
+                alert("Element is not Found.")
+            }
+
+        }
+        function display()
+        {
+            for(i=0;i<=c;i++)
+            {
+                console.log(a);
+            }
+        }
+
+
+    </script>
+
+
+
+
+
+</head>
+<body>
+    <input type="text" id="text1">
+    <input type="button" value="Data" onclick="push()">
+    <input type="button" value="Search" onclick="search()">
+    
+</body>
+</html>

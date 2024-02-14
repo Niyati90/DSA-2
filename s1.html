@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a=[]
+        var c= -1
+        function push1()
+        {
+            c++
+            a[c]=document.getElementById("text1").value
+            display()
+            document.getElementById("text1").value=""
+        }
+        function pop1(){
+        if(c < 0){
+            alert("empty")
+        }else{
+            a[c]=undefined
+            c--
+        
+            
+            display()
+        }
+    }
+ function display()
+ {
+    // if(c == -1)
+    // {
+    //     alert("empty")
+    // }else{
+
+        var tbl="<ul>"
+        for(i=0;i<=c;i++)
+        {
+            tbl+= "<li>"+ a[i]+"</li>"
+        }
+        tbl+= "</ul>"
+        document.getElementById("ans").innerHTML=tbl
+        console.log(a);
+    
+ }
+ display()
+    </script>
+</head>
+<body>
+    <input type ="text" id="text1">
+    <input type ="button"  value="push" onclick="push1()">
+    <input type ="button" value="pop" onclick="pop1()">
+    <div id="ans"></div>
+</body>
+</html>

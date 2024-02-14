@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fibonacci(value)
+        {
+            var n1=0;
+            var n2=1;
+            document.write(n1,"+");
+            document.write(n2);
+            
+            for(i=0;i<=value;i++)
+            {
+                sum=n1+n2;
+                document.write("+",sum);
+                n1=n2;
+                n2=sum;
+            }
+            
+        }
+        fibonacci(10)
+
+        </script>
+</head>
+<body>
+    <!-- <input type="number">
+    <input type="button" value="submit" onclick="fibonacci()"> -->
+    
+</body>
+</html>

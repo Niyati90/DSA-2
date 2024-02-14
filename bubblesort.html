@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let z=[100,5,66,86,93,59,0,58,9]
+        let z=[]
+        function add()
+        {
+            var a=document.getElementById("text1").value
+            z.push(a);
+            console.log(z);
+        }
+        function sort()
+        {
+            do
+            {
+                var x=false;
+
+                for(i=0;i<z.length-1;i++)
+                {
+                    if(z[i]>z[i+1])
+                    {
+                        const temp=z[i];
+                        z[i]=z[i+1];
+                        z[i+1]=temp;
+                        x=true;
+                    }
+                }
+            }
+            while(x)
+            console.log(z);
+        }
+
+
+    </script>
+</head>
+<body>
+    <input type="text" id="text1">
+    <input type="button" value="add" onclick="add()">
+    <input type="button" value="sort" onclick="sort()">
+</body>
+</html>
